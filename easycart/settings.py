@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'category',
     'accounts',
     'store',
+    'cart',
 
 ]
 
@@ -69,6 +70,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
 
                 'category.context_processors.menu_links' , # by using this we can call the category we want
+                'cart.context_processors.counter'
             ],
         },
     },

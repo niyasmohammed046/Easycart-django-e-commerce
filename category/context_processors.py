@@ -2,6 +2,6 @@
 
 from .models import Category  
 
-def menu_links(request):   # menu_links is pre defined
+def menu_links(request):   # menu_links is user defined ()
     links = Category.objects.all()
     return dict(links=links)
