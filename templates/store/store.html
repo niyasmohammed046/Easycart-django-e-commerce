@@ -10,7 +10,6 @@
         {% else %}
         <h2 class="title-page">Our Store</h2>
         {% endif %}
-        
     </div> <!-- container //  -->
     </section>
     <!-- ========================= SECTION INTRO END// ========================= -->
@@ -129,7 +128,7 @@
     </header><!-- sect-heading -->
     
     <div class="row">
-        {% if product %}   #this if is for if search is in keyword then onlythis loop will work
+        {% if products %}
         {% for product in products %}
         <div class="col-md-4">
             <figure class="card card-product-grid">
@@ -152,13 +151,14 @@
         </div> <!-- col.// -->
         {% endfor %}
         {% else %}
-        <div>
-            <h2 class="text-center"> No result Found. Please try again </h2>
+        <div class="text-center">
+            <h2>No Result Found, Please try again</h2>
         </div>
         {% endif %}
     </div> <!-- row end.// -->
     
-    
+                          <!-- Pageinator -->
+
     <nav class="mt-4" aria-label="Page navigation sample">
     {% if products.has_other_pages %}
       <ul class="pagination">
