@@ -129,31 +129,31 @@
     </header><!-- sect-heading -->
     
     <div class="row">
-        {% if product %}   #this if is for if search is in keyword then onlythis loop will work
-        {% for product in products %}
-        <div class="col-md-4">
-            <figure class="card card-product-grid">
-                <div class="img-wrap"> 
-                    
-                    <a href="{{ product.get_url }}"><img src="{{ product.product_img.url}}"></a>
-                    
-                </div> <!-- img-wrap.// -->
-                <figcaption class="info-wrap">
-                    <div class="fix-height">
-                        <a href="{{ product.get_url }}" class="title">{{ product.product_name }}</a>
-                        <div class="price-wrap mt-2">
-                            <span class="price">₹ {{ product.selling_price }}</span>
-                            <del class="price-old">₹ {{ product.mrp }}</del>
-                        </div> <!-- price-wrap.// -->
-                    </div>
-                    <a href="{{ product.get_url }}" class="btn btn-block btn-primary">View Details</a>
-                </figcaption>
-            </figure>
-        </div> <!-- col.// -->
-        {% endfor %}
+        {% if products %}
+                {% for product in products %}
+                <div class="col-md-4">
+                    <figure class="card card-product-grid">
+                        <div class="img-wrap"> 
+                            
+                            <a href="{{ product.get_url }}"><img src="{{ product.product_img.url}}"></a>
+                            
+                        </div> <!-- img-wrap.// -->
+                        <figcaption class="info-wrap">
+                            <div class="fix-height">
+                                <a href="{{ product.get_url }}" class="title">{{ product.product_name }}</a>
+                                <div class="price-wrap mt-2">
+                                    <span class="price">₹ {{ product.selling_price }}</span>
+                                    <del class="price-old">₹ {{ product.mrp }}</del>
+                                </div> <!-- price-wrap.// -->
+                            </div>
+                            <a href="{{ product.get_url }}" class="btn btn-block btn-primary">View Details</a>
+                        </figcaption>
+                    </figure>
+                </div> <!-- col.// -->
+                {% endfor %}
         {% else %}
         <div>
-            <h2 class="text-center"> No result Found. Please try again </h2>
+            <h2>No Result Found,Please try again</h2>
         </div>
         {% endif %}
     </div> <!-- row end.// -->
