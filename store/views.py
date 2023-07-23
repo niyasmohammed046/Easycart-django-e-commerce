@@ -8,6 +8,7 @@ from django.core.paginator import EmptyPage,PageNotAnInteger,Paginator
 from django.db.models import Q
 
 
+
 def store(request,category_slug=None):
     categories = None
     products = None
@@ -60,4 +61,3 @@ def search(request):
         'product_count':product_count
     }
     return render(request,'store/store.html',context)
-    
